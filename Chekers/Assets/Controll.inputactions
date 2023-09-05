@@ -1,0 +1,106 @@
+{
+    "name": "Controll",
+    "maps": [
+        {
+            "name": "Touchscreen",
+            "id": "c5277cab-fa3f-4732-89f6-1062bf7e00d2",
+            "actions": [
+                {
+                    "name": "TouchPos0",
+                    "type": "Value",
+                    "id": "070af61f-dcd6-4381-a944-f8991180b12d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TouchPos1",
+                    "type": "Value",
+                    "id": "1457eb35-efb8-49f6-82ff-56e624df7b05",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Touch0Tap",
+                    "type": "Button",
+                    "id": "5e129dd4-2a6c-4768-b242-01bea104c9e0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Touch1Tap",
+                    "type": "Button",
+                    "id": "f6f2a075-86ba-49f3-9561-1f62c14e2136",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0f44963b-78de-475b-a38a-fa1397e9bdb9",
+                    "path": "<Touchscreen>/touch0/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Andriod",
+                    "action": "TouchPos0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6204bc8-ae07-4006-a160-b5a5c97080eb",
+                    "path": "<Touchscreen>/touch1/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Andriod",
+                    "action": "TouchPos1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "488ffd1f-a370-4455-9d4b-68d6cf92bc42",
+                    "path": "<Touchscreen>/touch0/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Andriod",
+                    "action": "Touch0Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed87febb-9374-402a-8bdd-44097a6684b0",
+                    "path": "<Touchscreen>/touch1/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Andriod",
+                    "action": "Touch1Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Andriod",
+            "bindingGroup": "Andriod",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
