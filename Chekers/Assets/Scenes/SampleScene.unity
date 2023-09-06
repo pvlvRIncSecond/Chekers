@@ -314,6 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff0abbeb0f55054ea25f771b4f71616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rotationThreshold: 15
+  _rotationSensitivity: 0.01
   _zoomSensitivity: 0.03
   _minZoom: 20
   _maxZoom: 60

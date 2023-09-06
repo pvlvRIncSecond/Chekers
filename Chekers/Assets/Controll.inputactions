@@ -40,6 +40,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TouchDelta0",
+                    "type": "Value",
+                    "id": "847b07dd-bc59-4083-bf30-c5703ad35c83",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TouchDelta1",
+                    "type": "Value",
+                    "id": "465b69ef-8b60-4692-862a-d7838dcc50ac",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -84,6 +102,28 @@
                     "processors": "",
                     "groups": "Andriod",
                     "action": "Touch1Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf375fcf-360c-46a8-8b7f-9e5b3cdf2dc8",
+                    "path": "<Touchscreen>/touch0/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Andriod",
+                    "action": "TouchDelta0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ed5174c-0015-482d-8e48-ad4f284c0496",
+                    "path": "<Touchscreen>/touch1/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Andriod",
+                    "action": "TouchDelta1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

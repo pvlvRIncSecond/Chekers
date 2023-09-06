@@ -62,6 +62,24 @@ public partial class @Controll: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TouchDelta0"",
+                    ""type"": ""Value"",
+                    ""id"": ""847b07dd-bc59-4083-bf30-c5703ad35c83"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TouchDelta1"",
+                    ""type"": ""Value"",
+                    ""id"": ""465b69ef-8b60-4692-862a-d7838dcc50ac"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -108,6 +126,28 @@ public partial class @Controll: IInputActionCollection2, IDisposable
                     ""action"": ""Touch1Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf375fcf-360c-46a8-8b7f-9e5b3cdf2dc8"",
+                    ""path"": ""<Touchscreen>/touch0/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Andriod"",
+                    ""action"": ""TouchDelta0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ed5174c-0015-482d-8e48-ad4f284c0496"",
+                    ""path"": ""<Touchscreen>/touch1/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Andriod"",
+                    ""action"": ""TouchDelta1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -132,6 +172,8 @@ public partial class @Controll: IInputActionCollection2, IDisposable
         m_Touchscreen_TouchPos1 = m_Touchscreen.FindAction("TouchPos1", throwIfNotFound: true);
         m_Touchscreen_Touch0Tap = m_Touchscreen.FindAction("Touch0Tap", throwIfNotFound: true);
         m_Touchscreen_Touch1Tap = m_Touchscreen.FindAction("Touch1Tap", throwIfNotFound: true);
+        m_Touchscreen_TouchDelta0 = m_Touchscreen.FindAction("TouchDelta0", throwIfNotFound: true);
+        m_Touchscreen_TouchDelta1 = m_Touchscreen.FindAction("TouchDelta1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -197,6 +239,8 @@ public partial class @Controll: IInputActionCollection2, IDisposable
     private readonly InputAction m_Touchscreen_TouchPos1;
     private readonly InputAction m_Touchscreen_Touch0Tap;
     private readonly InputAction m_Touchscreen_Touch1Tap;
+    private readonly InputAction m_Touchscreen_TouchDelta0;
+    private readonly InputAction m_Touchscreen_TouchDelta1;
     public struct TouchscreenActions
     {
         private @Controll m_Wrapper;
@@ -205,6 +249,8 @@ public partial class @Controll: IInputActionCollection2, IDisposable
         public InputAction @TouchPos1 => m_Wrapper.m_Touchscreen_TouchPos1;
         public InputAction @Touch0Tap => m_Wrapper.m_Touchscreen_Touch0Tap;
         public InputAction @Touch1Tap => m_Wrapper.m_Touchscreen_Touch1Tap;
+        public InputAction @TouchDelta0 => m_Wrapper.m_Touchscreen_TouchDelta0;
+        public InputAction @TouchDelta1 => m_Wrapper.m_Touchscreen_TouchDelta1;
         public InputActionMap Get() { return m_Wrapper.m_Touchscreen; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -226,6 +272,12 @@ public partial class @Controll: IInputActionCollection2, IDisposable
             @Touch1Tap.started += instance.OnTouch1Tap;
             @Touch1Tap.performed += instance.OnTouch1Tap;
             @Touch1Tap.canceled += instance.OnTouch1Tap;
+            @TouchDelta0.started += instance.OnTouchDelta0;
+            @TouchDelta0.performed += instance.OnTouchDelta0;
+            @TouchDelta0.canceled += instance.OnTouchDelta0;
+            @TouchDelta1.started += instance.OnTouchDelta1;
+            @TouchDelta1.performed += instance.OnTouchDelta1;
+            @TouchDelta1.canceled += instance.OnTouchDelta1;
         }
 
         private void UnregisterCallbacks(ITouchscreenActions instance)
@@ -242,6 +294,12 @@ public partial class @Controll: IInputActionCollection2, IDisposable
             @Touch1Tap.started -= instance.OnTouch1Tap;
             @Touch1Tap.performed -= instance.OnTouch1Tap;
             @Touch1Tap.canceled -= instance.OnTouch1Tap;
+            @TouchDelta0.started -= instance.OnTouchDelta0;
+            @TouchDelta0.performed -= instance.OnTouchDelta0;
+            @TouchDelta0.canceled -= instance.OnTouchDelta0;
+            @TouchDelta1.started -= instance.OnTouchDelta1;
+            @TouchDelta1.performed -= instance.OnTouchDelta1;
+            @TouchDelta1.canceled -= instance.OnTouchDelta1;
         }
 
         public void RemoveCallbacks(ITouchscreenActions instance)
@@ -274,5 +332,7 @@ public partial class @Controll: IInputActionCollection2, IDisposable
         void OnTouchPos1(InputAction.CallbackContext context);
         void OnTouch0Tap(InputAction.CallbackContext context);
         void OnTouch1Tap(InputAction.CallbackContext context);
+        void OnTouchDelta0(InputAction.CallbackContext context);
+        void OnTouchDelta1(InputAction.CallbackContext context);
     }
 }
