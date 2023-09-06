@@ -1,3 +1,4 @@
+using System.Linq;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.Input;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace CodeBase.Components.ChekerDesk
         private const int CellCount = 8;
 
         [SerializeField] private float _width;
+        [SerializeField] ParticleSystem _particleSystem;
+        [SerializeField] Material _prizeMaterial;
 
         private IInputService _inputService;
         private Camera _camera;
@@ -95,6 +98,26 @@ namespace CodeBase.Components.ChekerDesk
             {
                 _selectedSell = null;
             }
+
+            CheckForPrize();
+        }
+
+        private void CheckForPrize()
+        {
+            var notEmpty = true;
+            for (int index = 0; index < CellCount; index++)
+            {
+                notEmpty &= _cells[index][index].IsEmpty;
+            }
+
+            if (notEmpty)
+                GivePrize();
+        }
+
+        private void GivePrize()
+        {
+            Renderer renderer = _particleSystem.GetComponent<Renderer>();
+            renderer.material = _prizeMaterial;
         }
 
         private Cell CreateCellWithIndex(Vector3 startPos, int i, int j) => 
