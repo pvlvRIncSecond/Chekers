@@ -96,6 +96,17 @@ public partial class @Controll: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7950e7c8-78d3-481f-9f52-c444d91469d5"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Andriod"",
+                    ""action"": ""TouchPos0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c6204bc8-ae07-4006-a160-b5a5c97080eb"",
                     ""path"": ""<Touchscreen>/touch1/position"",
                     ""interactions"": """",
@@ -112,6 +123,17 @@ public partial class @Controll: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Andriod"",
+                    ""action"": ""Touch0Tap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16e84b0b-c10e-4110-b52d-592af9a9fdeb"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""Touch0Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
