@@ -104,13 +104,13 @@ namespace CodeBase.Components.ChekerDesk
 
         private void CheckForPrize()
         {
-            var notEmpty = true;
+            var isEmpty = false;
             for (int index = 0; index < CellCount; index++)
             {
-                notEmpty &= _cells[index][index].IsEmpty;
+                isEmpty &= _cells[index][index].IsEmpty;
             }
 
-            if (notEmpty)
+            if (!isEmpty)
                 GivePrize();
         }
 
